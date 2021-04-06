@@ -10,7 +10,7 @@
         
     </head>
     <body>
-        <div class="header" >
+        <div class="header mt-3">
             <h1>Lista de compatibilidad</h1>
         </div>
 

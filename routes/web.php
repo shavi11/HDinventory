@@ -11,15 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DiskController@inicio');
 
 
-Route::get('registro',function(){
-    return view('Registro');
-});
+Route::get('registro', 'DiskController@registro');
+Route::post('/', 'DiskController@crear')->name('disco.crear');
 
-Route::get('resultado',function(){
-   return view('resultados'); 
-});
+//Route::post('/')
+
+Route::get('resultado', 'DiskController@resultado');

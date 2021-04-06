@@ -15,12 +15,12 @@ class CreateDiscosTable extends Migration
     {
         Schema::create('discos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('targetaLogica');
+            $table->string('targetaLogica');
             $table->string('modelo');
             $table->string('marca');
             $table->string('capacidad');
             $table->string('tipoEntrada');
-            $table->text('observaciones');
+            $table->text('observaciones')->nullable();
             $table->timestamps();
         });
     }
