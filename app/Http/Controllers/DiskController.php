@@ -37,7 +37,6 @@ class DiskController extends Controller
         $discoNuevo->tipoEntrada = $request->tipoEntrada;
         $discoNuevo->compatibilidad = $request->compatibilidad;
         $discoNuevo->observaciones = $request->observaciones;
-
         $discoNuevo->save();
 
         return back()->with('mensaje', 'Disco Agregado');
