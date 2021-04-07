@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,14 +19,12 @@
                <div class="container">
                <div class="row">
                <div class="container-fluid">
-                     <a class="navbar-brand" href="#">TECNO VIRTUAL DINAMYC</a>
+                     <h1>TECNO VIRTUAL DINAMYC</h1>
                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                        <span class="navbar-toggler-icon"></span>
                      </button>
                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                    <div class="navbar-nav">
-                       <a class="nav-link active" aria-current="page" href="#">Hogar</a>
-                    <a class="nav-link" href="#">Ayuda</a>
                        <a class="nav-link" href="{{ url('/registro') }}">Registro</a>
                    </div>
                 <div class="container-fluid">
@@ -45,10 +42,10 @@
 
      <header class="container-fluid" style="height: 550px; background-color: #5cbd9d ">
          <div class="row"> 
-           <div class="col-12 align-self-center text-center">
+           <div class="col-12 align-self-center text-center" >
                <img src="{{asset('images/logo.jpg')}}" class= "img-fluid" width="400px " alt="">
-              <h1>Bienvenidos a TECNO VIRTUAL DINAMYC</h1>
-              <hr>
+               <br><br><br><br>
+                <h1>Bienvenidos a TECNO VIRTUAL DINAMYC</h1>
               <p> LA SOLUCION A TU ALCANCE</p>
            </div>
          </div>
