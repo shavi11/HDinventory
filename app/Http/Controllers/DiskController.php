@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App;
 
@@ -29,7 +29,7 @@ class DiskController extends Controller
         ]);
         
         $discoNuevo = new App\Disco;
-        $discoNuevo->id = $request->id;
+        $discoNuevo->id_numero = $request->id;
         $discoNuevo->targetaLogica = $request->targetaLogica;
         $discoNuevo->modelo = $request->modelo;
         $discoNuevo->marca = $request->marca;
@@ -42,6 +42,21 @@ class DiskController extends Controller
         return back()->with('mensaje', 'Disco Agregado');
     }
     
+     public function compatible(Request $request){
+        $discoIm = $request->input('logico');
+         $discoL = DB::table('compatibles')
+         ->join('discos','discos.id','=','compatibles.id')
+         ->where('targeta_logica', $discoIm)
+         ->get();
+
+         if($discoL){
+             return view('resultado',compact('discoL'));
+         }else{
+             return back()->with('mensaje','Disco no encontrado');
+         }
+                
+     }   
+
 
     public function resultado(){
         return view('resultado');

@@ -18,6 +18,5 @@ Route::get('registro', 'DiskController@registro');
 Route::post('/', 'DiskController@crear')->name('disco.crear');
 
 
-//Route::post('/')
-
-Route::get('resultado', 'DiskController@resultado');
+Route::get('resultado', 'DiskController@resultado')->name('resultado');
+Route::post('resultado', 'DiskController@compatible')->name('disco.compatible');

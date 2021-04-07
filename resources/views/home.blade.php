@@ -15,6 +15,12 @@
     
 </head>
 <body>
+@if(session('mensaje'))
+        <div class="alert alert-danger">
+            {{session('mensaje')}}
+        </div>
+
+    @endif
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <div class="container">
                <div class="row">
@@ -28,8 +34,9 @@
                        <a class="nav-link" href="{{ url('/registro') }}">Registro</a>
                    </div>
                 <div class="container-fluid">
-                    <form class="d-flex">
-                        <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search">
+                    <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">
+                    {{csrf_field()}}
+                        <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="logico">
                         <button class="btn btn-outline-success" type="submit">Búsqueda</button>
                     </form>
                   </div>
