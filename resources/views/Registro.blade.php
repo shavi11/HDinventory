@@ -57,6 +57,11 @@
                         <label form="TipoEntrada">Tipo de entrada</label>
                         <input class="form-control" type="text" name="tipoEntrada" id="tipoEntrada" Placeholder="Ingrese el tipo de entrada">
                         <br>
+
+                        <label form="Compatibilidad">Compatibilidad</label>
+                        <input class="form-control" type="text" name="compatibilidad" id="compatibilidad" Placeholder="Ingrese el codigo de tarjeta logica">
+                        <br>
+
                         <label form="Observaciones">Observaciones</label>
                         <input class="form-control" type="text" name="observaciones" id="Observaciones">
 

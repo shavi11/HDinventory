@@ -35,6 +35,7 @@ class DiskController extends Controller
         $discoNuevo->marca = $request->marca;
         $discoNuevo->capacidad = $request->capacidad;
         $discoNuevo->tipoEntrada = $request->tipoEntrada;
+        $discoNuevo->compatibilidad = $request->compatibilidad;
         $discoNuevo->observaciones = $request->observaciones;
 
         $discoNuevo->save();
