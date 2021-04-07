@@ -17,6 +17,10 @@ Route::get('/', 'DiskController@inicio');
 Route::get('registro', 'DiskController@registro');
 Route::post('/', 'DiskController@crear')->name('disco.crear');
 
+Route::get('/home', function (){
+    return view ('home');
+});
+
 //Route::post('/')
 
 Route::get('resultado', 'DiskController@resultado');
