@@ -43,16 +43,21 @@ class DiskController extends Controller
     }
     
      public function compatible(Request $request){
+
+        $request->validate([
+            'logico' => 'required'
+        ]);
+
         $discoIm = $request->input('logico');
          $discoL = DB::table('compatibles')
          ->join('discos','discos.id','=','compatibles.id')
          ->where('targeta_logica', $discoIm)
          ->get();
 
-         if($discoL){
+         if(sizeof($discoL)>0){
              return view('resultado',compact('discoL'));
          }else{
-             return back()->with('mensaje','Disco no encontrado');
+             return back()->with('mensaje','Discos compatibles no encontrados');
          }
                 
      }   

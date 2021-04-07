@@ -17,11 +17,22 @@
             <table class="table">
         <thead>
           <tr>
-            <th scope="col">Targetas Logicas</th>
+            <th scope="col">ID</th>
+            <th scope="col">Targeta Logica</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Capacidad</th>
+            <th scope="col">Tipo de Entrada</th>
+            <th scope="col">Observaciones</th>
             @foreach($discoL as $discoL)
           </tr> 
-      
+      <td>{{$discoL->id_numero}}</td>
       <td>{{$discoL->targetaLogica}}</td>
+      <td>{{$discoL->modelo}}</td>
+      <td>{{$discoL->marca}}</td>
+      <td>{{$discoL->capacidad}}</td>
+      <td>{{$discoL->tipoEntrada}}</td>
+      <td>{{$discoL->observaciones}}</td>
 
     @endforeach
 
