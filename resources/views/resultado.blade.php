@@ -27,7 +27,7 @@
             @foreach($discoL as $discoL)
           </tr> 
       <td>{{$discoL->id_numero}}</td>
-      <td>{{$discoL->targetaLogica}}</td>
+      <td>{{$discoL->tarjeta_logica}}</td>
       <td>{{$discoL->modelo}}</td>
       <td>{{$discoL->marca}}</td>
       <td>{{$discoL->capacidad}}</td>
