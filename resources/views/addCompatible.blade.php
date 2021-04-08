@@ -13,7 +13,7 @@
          <div class="header">
             <h1>Discos Compatibles</h1>
           </div>
-          <form action="{{ route('disco.crear') }}" method="POST" enctype="multipart/form-data">
+          <form action="" method="POST" enctype="multipart/form-data">
             <div class="container ">
                  {{csrf_field()}}
               <div class="col-md-6">

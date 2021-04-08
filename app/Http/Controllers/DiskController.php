@@ -38,15 +38,9 @@ class DiskController extends Controller
         $discoNuevo->observaciones = $request->observaciones;
 
         $discoNuevo->save();
-            
-         if($discoNuevo){
-
             return view('addCompatible',compact('discoNuevo'));
-         }else{
-            return view('registro');   
+    
             //return back()->with('mensaje', 'Disco Agregado');
-         }
-         dd($discoNuevo);
     }
     
      public function compatible(Request $request){
