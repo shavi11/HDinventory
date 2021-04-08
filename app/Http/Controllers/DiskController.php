@@ -38,8 +38,15 @@ class DiskController extends Controller
         $discoNuevo->observaciones = $request->observaciones;
 
         $discoNuevo->save();
+            
+         if($discoNuevo){
 
-        return back()->with('mensaje', 'Disco Agregado');
+            return view('addCompatible',compact('discoNuevo'));
+         }else{
+            return view('registro');   
+            //return back()->with('mensaje', 'Disco Agregado');
+         }
+         dd($discoNuevo);
     }
     
      public function compatible(Request $request){
@@ -65,6 +72,10 @@ class DiskController extends Controller
 
     public function resultado(){
         return view('resultado');
+    }
+
+    public function addCompatible(){
+        return view('addCompatible');
     }
 
 }

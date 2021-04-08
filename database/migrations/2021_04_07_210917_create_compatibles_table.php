@@ -15,7 +15,7 @@ class CreateCompatiblesTable extends Migration
     {
         Schema::create('compatibles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('targeta_logica');
+            $table->string('tarjeta_logica');
             $table->unsignedBigInteger('id_logica');
 
             $table->foreign('id_logica')
