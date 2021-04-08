@@ -71,5 +71,8 @@ class DiskController extends Controller
     public function addCompatible(){
         return view('addCompatible');
     }
+    public function allHDD(){
+        return view('allTable',compact('discoL'));
+    }
 
 }

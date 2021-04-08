@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('navbar')
 
 @section('seccion')
 

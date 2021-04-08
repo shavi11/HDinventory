@@ -16,9 +16,8 @@ Route::get('/', 'DiskController@inicio')->name('home');
 
 Route::get('registro', 'DiskController@registro');
 Route::post('/', 'DiskController@crear')->name('disco.crear');
-
-
 Route::get('resultado', 'DiskController@resultado')->name('resultado');
 Route::post('resultado', 'DiskController@compatible')->name('disco.compatible');
-
 Route::get('addCompatible', 'Diskcontroller@addCompatible')->name('addCompatible');
+
+Route::get('tablaHDD', 'DiskController@allHDD');
