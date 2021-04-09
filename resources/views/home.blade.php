@@ -25,7 +25,7 @@
                <div class="container">
                 <div class="row">
                   <div class="container-fluid">
-                     <h1>TECNO VIRTUAL DINAMYC</h1>
+                     <h1>VIRTUAL TECNO DINAMYC</h1>
                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                        <span class="navbar-toggler-icon"></span>
                      </button>
@@ -53,7 +53,7 @@
            <div class="col-12 align-self-center text-center" >
                <img src="{{asset('images/logo.jpg')}}" class= "img-fluid" width="400px " alt="">
                <br><br><br><br>
-                <h1>Bienvenidos a TECNO VIRTUAL DINAMYC</h1>
+                <h1>Bienvenidos a VIRTUAL TECNO DINAMYC</h1>
               <p> LA SOLUCION A TU ALCANCE</p>
            </div>
          </div>
