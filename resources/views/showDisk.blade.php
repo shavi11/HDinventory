@@ -15,19 +15,16 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <div class="container">
                 <div class="row">
-                  <div class="col-12 align-self-center text-center">
-                  <p>
-                  <h1>LISTA DE DISCOS</h1>
-                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                       <span class="navbar-toggler-icon"></span>
-                     </button>
-                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="col-12 align-self-center text-center">
+                            <h1>LISTA DE DISCOS</h1>
+                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                          </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                    
-                <div class="container-fluid">
+                      <div class="container-fluid">
                     
                </div>
-             </div>
-             </div>
              </div>
 
      </nav>
@@ -38,7 +35,7 @@
              <thead>
               <tr>
                  <th scope="col">ID</th>
-                 <th scope="col">Targeta Logica</th>
+                 <th scope="col">Tarjeta Logica</th>
                  <th scope="col">Modelo</th>
                  <th scope="col">Marca</th>
                  <th scope="col">Capacidad</th>
@@ -54,7 +51,7 @@
           <td>{{$discoL->capacidad}}</td>
           <td>{{$discoL->tipoEntrada}}</td>
           <td>{{$discoL->observaciones}}</td>
-          <td>{{$discoL->targeta_logica}}</td>
+          <td>{{$discoL->tarjeta_logica}}</td>
       
         @endforeach
         </div>
