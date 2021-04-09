@@ -48,7 +48,7 @@
 
      </nav>
 
-     <header class="container-fluid" style="height: 550px; background-color: #5cbd9d ">
+     <header class="container-fluid" style="height: 500px; background-color: #5cbd9d ">
          <div class="row"> 
            <div class="col-12 align-self-center text-center" >
                <img src="{{asset('images/logo.jpg')}}" class= "img-fluid" width="400px " alt="">
