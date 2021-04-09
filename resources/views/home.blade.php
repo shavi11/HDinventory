@@ -38,6 +38,7 @@
                     {{csrf_field()}}
                         <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="logico">
                         <button class="btn btn-outline-success" type="submit">Búsqueda</button>
+                        <a class="btn btn-outline-info mx-3 " href="{{ url('/showDisk') }}">Discos </a>
                     </form>
                   </div>
                </div>

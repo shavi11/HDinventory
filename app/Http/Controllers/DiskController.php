@@ -98,4 +98,9 @@ class DiskController extends Controller
         return view('addCompatible');
     }
 
+    public function showDisk(){
+        $discoL = App\Disco::all();
+      return view('showDisk',compact('discoL'));
+    }
+
 }

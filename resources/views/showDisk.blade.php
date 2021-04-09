@@ -2,7 +2,7 @@
 
 @section('seccion')
 
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="header mt-3">
-            <h1>Lista de compatibilidad</h1>
+            <h1>Lista de Discos</h1>
         </div>
 
             <table class="table">
@@ -24,6 +24,7 @@
             <th scope="col">Capacidad</th>
             <th scope="col">Tipo de Entrada</th>
             <th scope="col">Observaciones</th>
+            <th scope="col">Disco Compatible</th>
             @foreach($discoL as $discoL)
           </tr> 
       <td>{{$discoL->id_numero}}</td>
@@ -33,7 +34,12 @@
       <td>{{$discoL->capacidad}}</td>
       <td>{{$discoL->tipoEntrada}}</td>
       <td>{{$discoL->observaciones}}</td>
-
+      <td>{{$discoL->targeta_logica}}</td>
+      
     @endforeach
-
     </body>
+
+
+
+
+@endsection
