@@ -34,7 +34,7 @@
       <td>{{$discoL->capacidad}}</td>
       <td>{{$discoL->tipoEntrada}}</td>
       <td>{{$discoL->observaciones}}</td>
-      <td>{{$discoL->targeta_logica}}</td>
+      <td>{{$discoL->tarjeta_logica}}</td>
       
     @endforeach
     </body>
