@@ -14,7 +14,12 @@ class CreateDiscosTable extends Migration
     public function up()
     {
         Schema::create('discos', function (Blueprint $table) {
+<<<<<<< HEAD
             $table->string('id');
+=======
+            $table->bigIncrements('id');
+            $table->string('id_numero');
+>>>>>>> javier
             $table->string('targetaLogica');
             $table->string('modelo');
             $table->string('marca');

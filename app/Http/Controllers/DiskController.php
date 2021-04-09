@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App;
 
 class DiskController extends Controller
 {
     public function inicio(){
-        return view('welcome');
+        return view('home');
     }
 
 
@@ -29,7 +29,7 @@ class DiskController extends Controller
         ]);
         
         $discoNuevo = new App\Disco;
-        $discoNuevo->id = $request->id;
+        $discoNuevo->id_numero = $request->id;
         $discoNuevo->targetaLogica = $request->targetaLogica;
         $discoNuevo->modelo = $request->modelo;
         $discoNuevo->marca = $request->marca;
@@ -38,13 +38,41 @@ class DiskController extends Controller
         $discoNuevo->compatibilidad = $request->compatibilidad;
         $discoNuevo->observaciones = $request->observaciones;
         $discoNuevo->save();
-
-        return back()->with('mensaje', 'Disco Agregado');
+            return view('addCompatible',compact('discoNuevo'));
+    
+            //return back()->with('mensaje', 'Disco Agregado');
     }
     
+     public function compatible(Request $request){
+
+        $request->validate([
+            'logico' => 'required'
+        ]);
+
+        $discoIm = $request->input('logico');
+         $discoL = DB::table('compatibles')
+         ->join('discos','discos.id','=','compatibles.id')
+         ->where('targeta_logica', $discoIm)
+         ->get();
+
+         if(sizeof($discoL)>0){
+             return view('resultado',compact('discoL'));
+         }else{
+             return back()->with('mensaje','Discos compatibles no encontrados');
+         }
+                
+     }   
+
 
     public function resultado(){
         return view('resultado');
+    }
+
+    public function addCompatible(){
+        return view('addCompatible');
+    }
+    public function allHDD(){
+        return view('allTable',compact('discoL'));
     }
 
 }

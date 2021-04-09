@@ -1,4 +1,4 @@
-@extends('plantilla')
+@extends('navbar')
 
 @section('seccion')
 
@@ -7,7 +7,7 @@
 </header>
 
     @if(session('mensaje'))
-        <div class="alert alert-success">
+        <div class="alert alert-danger">
             {{session('mensaje')}}
         </div>
 
@@ -41,12 +41,12 @@
                         <input class="form-control" type="text" name="targetaLogica" id="targetaL" Placeholder="Ingrese la targeta logica">
                         <br>
 
-                        <label form="Modelo">Modelo</label>
+                        <label form="Modelo">Modelo de Placa</label>
                         <input class="form-control" type="text" name="modelo" id="model" Placeholder="Ingrese el modelo">
 
                         <br>
 
-                        <label form="Marca">Marca</label>
+                        <label form="Marca">Marca de Disco Duro</label>
                         <input class="form-control" type="text" name="marca" id="marca" Placeholder="Ingrese la marca">
 
                         <br>
