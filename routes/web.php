@@ -26,6 +26,6 @@ Route::post('resultado', 'DiskController@compatible')->name('disco.compatible');
 Route::get('addCompatible', 'Diskcontroller@addCompatible')->name('addCompatible'); 
 Route::post('addCompatible', 'DiskController@add');
 
-Route::get('terminaRegistro', 'DiskController@terminaRegistro');
+Route::get('/', 'DiskController@terminaRegistro');
 
 Route::get('showDisk', 'DiskController@showDisk')->name('showDisk');

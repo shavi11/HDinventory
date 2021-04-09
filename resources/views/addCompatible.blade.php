@@ -29,14 +29,14 @@
                                     ->select('tarjetaLogica')
                                     ->first();
                                     ?>
-                          <h3>Targeta Logica:{{ $disco->tarjetaLogica}} </h3>
+                          <h3>Targeta Logica: {{ $disco->tarjetaLogica}} </h3>
                         @endif
                         
                      
                         <input class="form-control" type="text" name="compatible" placeholder="Ingrese Disco Compatible"> 
                         <button class="btn btn-outline-success mt-3" type="submit">Añadir</button>
 
-                        <a href="{{url('terminaRegistro')}}"class="btn btn-outline-primary mt-3">Terminar Registro</a>  
+                        <a href="{{url('/')}}"class="btn btn-outline-primary mt-3">Terminar Registro</a>  
                      </div>      
                   </div>
                </div>
