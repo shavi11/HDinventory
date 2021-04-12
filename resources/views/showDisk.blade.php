@@ -7,7 +7,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TecnoVirtualDinamyc</title>
+        <title>VirtualTecnoDinamyc</title>
         
     </head>
     <body>
@@ -29,7 +29,7 @@
              </div>
 
      </nav>
-          <header class="container-fluid" style="height: 500px; background-color: #0D6EFD ">
+     <header class="container-fluid" style="height: 500px; background-color: #0D6EFD ">
           <div class="row">
 
                   <table class="table text-white">
