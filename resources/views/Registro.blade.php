@@ -2,8 +2,8 @@
 
 @section('seccion')
 
-<header>
-    <h1 class="pt-4">REGISTRO DE DISCO DURO</h1>
+<header class="text-center mb-3">
+    <h1 class="pt-4 ">REGISTRO DE DISCO DURO</h1>
 </header>
 
     @if(session('mensaje'))

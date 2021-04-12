@@ -11,17 +11,21 @@
     </head>
     <body>
          <div class="header">
+            <div class="container-fluid text-white text-center" style=" background-color: #0D6EFD ">
             <h1 >Discos Compatibles</h1>
-          </div>
+            </div>
+          </div>  
           <form action="{{ route('addCompatible') }}" method="POST" enctype="multipart/form-data">
-            <div class="container ">
+            <div class="container">
                  {{csrf_field()}}
-              <div class="col-md-6">
-                  <div class="box box-primary">
+              <div class="d-flex justify-content-center" style="padding-top: 100px" >
+                  <div class="box box-primary" >
                       <div class="panel panel-heading">
                         
                         @if (!empty($new))
-                            <h3>Targeta Logica: {{$new}} </h3>
+                      
+                            <h3>Tarjeta Logica: {{$new}} </h3>
+                            <br>
                         @else
                                     <?php 
                                     $disco = DB::table('discos')
@@ -34,9 +38,9 @@
                         
                      
                         <input class="form-control" type="text" name="compatible" placeholder="Ingrese Disco Compatible"> 
-                        <button class="btn btn-outline-success mt-3" type="submit">Añadir</button>
+                        <button class="btn btn-success mt-5" type="submit">Añadir</button>
 
-                        <a href="{{url('/')}}"class="btn btn-outline-primary mt-3">Terminar Registro</a>  
+                        <a href="{{url('/')}}"class="btn btn-primary mt-5">Terminar Registro</a>  
                      </div>      
                   </div>
                </div>
