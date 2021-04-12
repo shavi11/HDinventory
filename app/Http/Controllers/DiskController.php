@@ -51,7 +51,8 @@ class DiskController extends Controller
         $request->validate([
             'logico' => 'required'
         ]);
-
+         $busqueda = $request->input('logico');   
+         //https://www.google.com/search?q=701499&oq=701499&aqs=chrome..69i57.2100j0j15&sourceid=chrome&ie=UTF-8       
          $discoL = DB::table('compatibles')
          ->join('discos','discos.id','=','compatibles.id_logica')
          ->where('tarjeta_logica',  $request->logico)
@@ -59,7 +60,7 @@ class DiskController extends Controller
          if(sizeof($discoL)>0){
              return view('resultado',compact('discoL'));
          }else{
-             return back()->with('mensaje','Discos compatibles no encontrados');
+             return redirect('https://www.google.com/search?q='.$busqueda.'&oq='.$busqueda.'&aqs=chrome..69i57.2100j0j15&sourceid=chrome&ie=UTF-8');
          }
                 
      }   
