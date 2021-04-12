@@ -2,6 +2,7 @@
 
 @section('seccion')
 
+<<<<<<< HEAD
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -10,6 +11,11 @@
         <title>TecnoVirtualDinamyc</title>
         
     </head>
+=======
+<header class="text-center mb-3">
+    <h1 class="pt-4 ">REGISTRO DE DISCO DURO</h1>
+</header>
+>>>>>>> origin/javier
 
     @if(session('mensaje'))
         <div class="alert alert-danger">
