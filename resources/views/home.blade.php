@@ -18,6 +18,10 @@
 @if(session('mensaje'))
         <div class="alert alert-danger">
             {{session('mensaje')}}
+            <br>
+            <div>
+               Referencia al siguiente <a href="https://www.google.com/search?q=G002641A&oq=G00&aqs=chrome.3.69i57j0l2j69i59j0j69i60l3.9678j0j9&sourceid=chrome&ie=UTF-8">enlace</a>
+            </div>
         </div>
 
     @endif
@@ -31,7 +35,7 @@
                      </button>
                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                    <div class="navbar-nav">
-                       <a class="nav-link" href="{{ url('/registro') }}">Registro</a>
+                       <a class="btn btn'outline'info mx-3" href="{{ url('/registro') }}">Registro</a>
                    </div>
                 <div class="container-fluid">
                     <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">

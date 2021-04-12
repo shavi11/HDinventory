@@ -53,10 +53,14 @@
           <td>{{$discoL->observaciones}}</td>
           <td>{{$discoL->tarjeta_logica}}</td>
       
+      
         @endforeach
         </div>
     </header>
     </body>
+    <div class="container-fluid">
+    <a href="{{ url('/') }}" class="btn btn-primary mb-5">Volver</a>
+    </div>
 
 
 

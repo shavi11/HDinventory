@@ -3,7 +3,7 @@
 @section('seccion')
 
 <header>
-    <h1 class="pt-4">Registro de Disco Duro</h1>
+    <h1 class="pt-4">REGISTRO DE DISCO DURO</h1>
 </header>
 
     @if(session('mensaje'))
@@ -23,13 +23,16 @@
             </div>
          @endif  
 <body>
-
+<header class="container-fluid" style="height: 620px; background-color: #5cbd9d ">
+         <div class="row"> 
+           <div class="col-12 align-self-center text-center placeholder-center" >
+               
     <form action="{{ route('disco.crear') }}" method="POST" enctype="multipart/form-data">
-        <div class="container ">
+        <div class="container">
         {{csrf_field()}}
-             <div class="col-md-6">
+             <div class="col-md-4 col-md-offset-4 ">
                 <div class="box box-primary">
-                    <div class="panel panel-heading">
+                    <div class="panel panel-heading align-self-center">
                         
                         </br>
                         <label form="id">ID</label>
@@ -67,7 +70,10 @@
                 </div>
             </div>
          </div>
-    </form>    
+    </form>  
+    </div>
+         </div>
+     </header>
 </body>
 
 
