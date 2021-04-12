@@ -20,29 +20,32 @@
             {{session('mensaje')}}
             <br>
             <div>
-               Referencia al siguiente <a href="https://www.google.com/search?q=G002641A&oq=G00&aqs=chrome.3.69i57j0l2j69i59j0j69i60l3.9678j0j9&sourceid=chrome&ie=UTF-8">enlace</a>
+               Referencia al siguiente <a href="https://www.google.com/">enlace</a>
             </div>
         </div>
 
     @endif
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                <div class="container">
                 <div class="row">
                   <div class="container-fluid">
-                     <h1>VIRTUAL TECNO DINAMYC</h1>
+                    <h1 style="color:#fff">VIRTUAL TECNO DINAMYC</h1>
                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                        <span class="navbar-toggler-icon"></span>
                      </button>
                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                   <div class="navbar-nav">
-                       <a class="btn btn'outline'info mx-3" href="{{ url('/registro') }}">Registro</a>
-                   </div>
+                 <div class="navbar-nav me-4">
+                            <a class="navbar-brand" href="{{ url('/registro') }}">REGISTRO</a>
+                        </div>
+                        <div class="navbar-nav">
+                            <a class="navbar-brand" href="{{ url('/showDisk') }}">DISCOS</a>
+                        </div>
                 <div class="container-fluid">
                     <form action="{{ route('disco.compatible') }}" method="POST" class="d-flex">
                     {{csrf_field()}}
                         <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="logico">
-                        <button class="btn btn-outline-success" type="submit">Búsqueda</button>
-                        <a class="btn btn-outline-info mx-3 " href="{{ url('/showDisk') }}">Discos </a>
+                        <button class="btn btn-outline-light" type="submit">Búsqueda</button>
+                        
                     </form>
                   </div>
                </div>
@@ -52,7 +55,7 @@
 
      </nav>
 
-     <header class="container-fluid" style="height: 500px; background-color: #5cbd9d ">
+     <header class="container-fluid" style="height: 500px; background-color: #fff ">
          <div class="row"> 
            <div class="col-12 align-self-center text-center" >
                <img src="{{asset('images/logo.jpg')}}" class= "img-fluid" width="400px " alt="">
@@ -64,10 +67,11 @@
      </header>
 </body>
 <footer>
-   <div class="container">
-      <div class="row" >
-          <p>Central: Edificio SKYBOX - Antezana casi Heroinas, Oficina #4 Planta baja</p>
-      </div>
+<div class="container-fluid text-center text-white" style="background-color: #0D6EFD">
+        <div class="row">
+            <p>Central: Edificio SKYBOX - Antezana casi Heroinas, Oficina #4 Planta baja</p>
+        </div>
+    </div>
    </div>
 </footer>
 </html>

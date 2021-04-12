@@ -23,7 +23,7 @@
             </div>
          @endif  
 <body>
-<header class="container-fluid" style="height: 620px; background-color: #5cbd9d ">
+<header class="container-fluid" style="height: 620px; background-color: #0D6EFD ">
          <div class="row"> 
            <div class="col-12 align-self-center text-center placeholder-center" >
                

@@ -23,15 +23,16 @@
                       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                    
                       <div class="container-fluid">
+                   </div>
                     
                </div>
              </div>
 
      </nav>
-        <header class="container-fluid" style="height: 500px; background-color: #5cbd9d ">
+        <header class="container-fluid" style="height: 500px; background-color: #0D6EFD ">
          <div class="row">
 
-                <table class="table">
+                <table class="table text-white">
              <thead>
               <tr>
                  <th scope="col">ID</th>
@@ -55,12 +56,19 @@
       
       
         @endforeach
+        </table>
         </div>
     </header>
     </body>
-    <div class="container-fluid">
-    <a href="{{ url('/') }}" class="btn btn-primary mb-5">Volver</a>
+    <footer>
+    <div class="row">
+    <div class="col-5"></div> 
+    <div class="col-5"> <a href="{{ url('/') }}" class="btn btn-primary float-left ">Volver</a></div>
     </div>
+         <div class="container-fluid align-self-center">
+           <a href="{{ url('/') }}" class="btn btn-light float-right text-blue ">Volver</a>
+         </div>
+    </footer>
 
 
 
