@@ -107,7 +107,7 @@ class DiskController extends Controller
             	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
             ->leftjoin("discos","discos.id","=","compatibles.id_logica")
             ->groupBy('compatibles.id_logica')
-            ->get();
+            ->get(200);
             
 
             

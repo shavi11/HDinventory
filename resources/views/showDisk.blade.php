@@ -55,8 +55,11 @@
 
                     @endforeach
             </table>
+           
         </div>
+        
     </div>
+    
 </body>
 <nav class="navbar navbar-expand-lg  bg-light">
                 <a href="{{ url('/') }}" class="btn btn-secondary btn-lg btn-block">Volver</a>
