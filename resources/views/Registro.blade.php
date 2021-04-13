@@ -1,101 +1,104 @@
 @extends('plantilla')
 
+<nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
+    <div class="row">
+        <div class="container-fluid">
+            <h1 style="color:#fff">REGISTRO DE DISCO</h1>
+
+        </div>
+    </div>
+    </div>
+</nav>
+
 @section('seccion')
 
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TecnoVirtualDinamyc</title>
-        
-    </head>
+<html lang="en">
 
-    @if(session('mensaje'))
-        <div class="alert alert-danger">
-            {{session('mensaje')}}
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoVirtualDinamyc</title>
 
-    @endif
+</head>
 
-    @if($errors->any())
-            <div class="alert alert-danger">
-               <ul>
-                  @foreach($errors->all() as $error)
-                     <li>{{$error}}</li>
-                   @endforeach
-               </ul>      
-            </div>
-         @endif  
+@if(session('mensaje'))
+<div class="alert alert-danger">
+    {{session('mensaje')}}
+</div>
+
+@endif
+
+@if($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{$error}}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="container">
-                <div class="row">
-                      <div class="col-12 align-self-center text-center">
-                            <h1>REGISTRO DE DISCO</h1>
-                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"></span>
-                          </button>
-                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                   
-                      <div class="container-fluid">
-                   </div>
-                    
-               </div>
-             </div>
+   
+    <header class="container-fluid" style="height: 620px; background-color: #0D6EFD ">
+        <div class="row">
+            <div class="col-12 align-self-center text-center placeholder-center">
 
-     </nav>
-<header class="container-fluid" style="height: 620px; background-color: #0D6EFD ">
-         <div class="row"> 
-           <div class="col-12 align-self-center text-center placeholder-center" >
-               
-    <form action="{{ route('disco.crear') }}" method="POST" enctype="multipart/form-data">
-        <div class="container">
-        {{csrf_field()}}
-             <div class="col-md-4 col-md-offset-4 ">
-                <div class="box box-primary">
-                    <div class="panel panel-heading align-self-center">
-                        
-                        </br>
-                        <label form="id">ID</label>
-                        <input class="form-control" type="text" name="id" id="idhd" placeholder="Ingrese el ID">
-                        
-                        <br>
+                <form action="{{ route('disco.crear') }}" method="POST" enctype="multipart/form-data">
+                    <div class="container">
+                        {{csrf_field()}}
+                        <div class="col-md-4 col-md-offset-4 ">
+                            <div class="box box-primary">
+                                <div class="panel panel-heading align-self-center">
 
-                        <label form="TargetaLogica">Targeta Logica</label>
-                        <input class="form-control" type="text" name="targetaLogica" id="targetaL" Placeholder="Ingrese la targeta logica">
-                        <br>
+                                    </br>
+                                    <label form="id">ID</label>
+                                    <input class="form-control" type="text" name="id" id="idhd"
+                                        placeholder="Ingrese el ID">
 
-                        <label form="Modelo">Modelo de Placa</label>
-                        <input class="form-control" type="text" name="modelo" id="model" Placeholder="Ingrese el modelo">
+                                    <br>
 
-                        <br>
+                                    <label form="TargetaLogica">Targeta Logica</label>
+                                    <input class="form-control" type="text" name="targetaLogica" id="targetaL"
+                                        Placeholder="Ingrese la targeta logica">
+                                    <br>
 
-                        <label form="Marca">Marca de Disco Duro</label>
-                        <input class="form-control" type="text" name="marca" id="marca" Placeholder="Ingrese la marca">
+                                    <label form="Modelo">Modelo de Placa</label>
+                                    <input class="form-control" type="text" name="modelo" id="model"
+                                        Placeholder="Ingrese el modelo">
 
-                        <br>
-                        <label form="Capacidad">Capacidad</label>
-                        <input class="form-control" type="text" name="capacidad" id="capacidad" Placeholder="Ingrese la capacidad">
-                        <br>
+                                    <br>
 
-                        <label form="TipoEntrada">Tipo de entrada</label>
-                        <input class="form-control" type="text" name="tipoEntrada" id="tipoEntrada" Placeholder="Ingrese el tipo de entrada">
-                        <br>
-                        <label form="Observaciones">Observaciones</label>
-                        <input class="form-control" type="text" name="observaciones" id="Observaciones">
+                                    <label form="Marca">Marca de Disco Duro</label>
+                                    <input class="form-control" type="text" name="marca" id="marca"
+                                        Placeholder="Ingrese la marca">
 
-                        <br>
-                        <button type="submit" class="btn btn-success mb-5" value="Agregar" class>Registrar</button>
-                        <a href="{{ url('/') }}" class="btn btn-primary mb-5">Volver</a>
+                                    <br>
+                                    <label form="Capacidad">Capacidad</label>
+                                    <input class="form-control" type="text" name="capacidad" id="capacidad"
+                                        Placeholder="Ingrese la capacidad">
+                                    <br>
+
+                                    <label form="TipoEntrada">Tipo de entrada</label>
+                                    <input class="form-control" type="text" name="tipoEntrada" id="tipoEntrada"
+                                        Placeholder="Ingrese el tipo de entrada">
+                                    <br>
+                                    <label form="Observaciones">Observaciones</label>
+                                    <input class="form-control" type="text" name="observaciones" id="Observaciones">
+
+                                    <br>
+                                    <button type="submit" class="btn btn-success mb-5" value="Agregar"
+                                        class>Registrar</button>
+                                    <a href="{{ url('/') }}" class="btn btn-primary mb-5">Volver</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
-         </div>
-    </form>  
-    </div>
-         </div>
-     </header>
+        </div>
+    </header>
 </body>
 
 

@@ -52,7 +52,6 @@
              </div>
              </div>
              </div>
-
      </nav>
 
      <header class="container-fluid" style="height: 500px; background-color: #fff ">
