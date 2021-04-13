@@ -38,9 +38,9 @@
     </ul>
 </div>
 @endif
-<nav class="navbar navbar-expand-lg  bg-light">
+<!--<nav class="navbar navbar-expand-lg  bg-light">
                 <a href="{{ url('/') }}" class="btn btn-secondary btn-lg btn-block">Volver</a>
-    </nav>
+    </nav>-->
 
 <body>
    

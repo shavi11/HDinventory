@@ -40,19 +40,17 @@
                         <th scope="col">Capacidad</th>
                         <th scope="col">Tipo de Entrada</th>
                         <th scope="col">Observaciones</th>
-                        <th scope="col">Disco Compatible</th>
-                        @foreach($discoL as $discoL)
+                     
+                        @foreach($dis as $dis)
                     </tr>
-                    <td>{{$discoL->id_numero}}</td>
-                    <td>{{$discoL->tarjetaLogica}}</td>
-                    <td>{{$discoL->modelo}}</td>
-                    <td>{{$discoL->marca}}</td>
-                    <td>{{$discoL->capacidad}}</td>
-                    <td>{{$discoL->tipoEntrada}}</td>
-                    <td>{{$discoL->observaciones}}</td>
-                    <td>{{$discoL->tarjeta_logica}}</td>
-
-
+                    <td>{{$dis->id_numero}}</td>
+                    <td>{{$dis->tarjetaLogica}}</td>
+                    <td>{{$dis->modelo}}</td>
+                    <td>{{$dis->marca}}</td>
+                    <td>{{$dis->capacidad}}</td>
+                    <td>{{$dis->tipoEntrada}}</td>
+                    <td>{{$dis->observaciones}}</td>
+                    
                     @endforeach
             </table>
            

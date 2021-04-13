@@ -1,5 +1,13 @@
 @extends('plantilla')
+<nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
+    <div class="row">
+        <div class="container-fluid">
+            <h1 style="color:#fff">LISTA DE COMPATIBILIDAD</h1>
 
+        </div>
+    </div>
+    </div>
+</nav>
 @section('seccion')
 
     <!DOCTYPE html>
@@ -12,24 +20,10 @@
         
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="container">
-                <div class="row">
-                      <div class="col-12 align-self-center text-center">
-                            <h1>LISTA DE COMPATIBILIDAD</h1>
-                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"></span>
-                          </button>
-                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                   
-                      <div class="container-fluid">
-                   </div>
-                    
-               </div>
-             </div>
-
-     </nav>
-    <header class="container-fluid" style="height: 500px; background-color: #0D6EFD ">
+    <nav class="navbar navbar-expand-lg  bg-light">
+                <a href="{{ url('/') }}" class="btn btn-secondary btn-lg btn-block">Volver</a>
+    </nav>
+    <div class="container-fluid" style="background-color: #0D6EFD ">
          <div class="row">
 
                 <table class="table text-white">
@@ -55,14 +49,14 @@
     @endforeach
            </table>
            </div>
-    </header>
+    </div>
     </body>
-    <footer>
+   <!-- <footer>
         <div class="row">
           <div class="col-5"></div> 
             <div class="col-5"> <a href="{{ url('/') }}" class="btn btn-primary float-left ">Volver</a></div>
            </div>   
-    </footer>
+    </footer> -->
 
 
 

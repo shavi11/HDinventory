@@ -100,20 +100,14 @@ class DiskController extends Controller
     }
 
     public function showDisk(){
-
-
         $discoL = DB::table('compatibles')
             ->select("discos.*"
             	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
             ->leftjoin("discos","discos.id","=","compatibles.id_logica")
             ->groupBy('compatibles.id_logica')
-            ->get(200);
-            
+            ->get();       
+        $dis = DB::table('discos')->get();
 
-            
-
-
-      return view('showDisk',compact('discoL'));
+      return view('showDisk',compact('dis'));
     }
-
 }
