@@ -3,7 +3,7 @@
 <link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
 </head>
 
-<nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
+<nav class="navbar navbar-light" style="background-color: #0D6EFD;" class="container">
     <div class="row">
         <div class="container-fluid">
             <h1 style="color:#fff">REGISTRO DE DISCO</h1>
@@ -60,38 +60,38 @@
 
                                     </br>
                                     <label form="id">ID</label>
-                                    <input class="form-control" type="text" name="id" id="idhd"
-                                        placeholder="Ingrese el ID">
+                                    <input class="form-control" type="text" name="id_numero" id="idhd"
+                                        placeholder="Ingrese el ID" value="{{ old('id_numero') }}">
 
                                     <br>
 
                                     <label form="TargetaLogica">Targeta Logica</label>
                                     <input class="form-control" type="text" name="targetaLogica" id="targetaL"
-                                        Placeholder="Ingrese la targeta logica">
+                                        Placeholder="Ingrese la targeta logica" value="{{ old('targetaLogica') }}">
                                     <br>
 
                                     <label form="Modelo">Modelo de Placa</label>
                                     <input class="form-control" type="text" name="modelo" id="model"
-                                        Placeholder="Ingrese el modelo">
+                                        Placeholder="Ingrese el modelo" value="{{ old('modelo') }}">
 
                                     <br>
 
                                     <label form="Marca">Marca de Disco Duro</label>
                                     <input class="form-control" type="text" name="marca" id="marca"
-                                        Placeholder="Ingrese la marca">
+                                        Placeholder="Ingrese la marca" value="{{ old('marca') }}">
 
                                     <br>
                                     <label form="Capacidad">Capacidad</label>
                                     <input class="form-control" type="text" name="capacidad" id="capacidad"
-                                        Placeholder="Ingrese la capacidad">
+                                        Placeholder="Ingrese la capacidad" value="{{ old('capacidad') }}">
                                     <br>
 
                                     <label form="TipoEntrada">Tipo de entrada</label>
                                     <input class="form-control" type="text" name="tipoEntrada" id="tipoEntrada"
-                                        Placeholder="Ingrese el tipo de entrada">
+                                        Placeholder="Ingrese el tipo de entrada" value="{{ old('tipoEntrada') }}">
                                     <br>
                                     <label form="Observaciones">Observaciones</label>
-                                    <input class="form-control" type="text" name="observaciones" id="Observaciones">
+                                    <input class="form-control" type="text" name="observaciones" id="Observaciones" value="{{ old('observaciones') }}">
 
                                     <br>
                                     <button type="submit" class="btn btn-success mb-5" value="Agregar"

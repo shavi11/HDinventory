@@ -2,10 +2,10 @@
 <head>
 <link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
 </head>
-<nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
+<nav class="navbar navbar-light" style="background-color: #FFCB00;" class="container">
     <div class="row">
         <div class="container-fluid">
-            <h1 style="color:#fff">LISTA DE DISCOS</h1>
+            <h1 style="color:#000">LISTA DE DISCOS</h1>
 
         </div>
     </div>
@@ -73,12 +73,14 @@
                     <td>{{$dis->tipoEntrada}}</td>
                     <td>{{$dis->observaciones}}</td>
                     <td>
-                <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post">
-                {{csrf_field()}}
-                {{ method_field('DELETE') }}
-                    <button class="btn btn-danger" type="submit">Eliminar</button>
-                </form>    
-           </td> 
+                        <a href="{{url('editar',$dis->id)}}" class="btn btn-success">Editar</a>
+ 
+                        <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post" class="d-inline">
+                        {{csrf_field()}}
+                        {{ method_field('DELETE') }}
+                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                        </form>    
+                    </td> 
                     
                     @endforeach
             </table>

@@ -27,7 +27,7 @@ class DiskController extends Controller
             'marca' => 'required',
             'capacidad' => 'required',
             'tipoEntrada' => 'required',
-            'observaciones' => 'required',
+            
         ]);
         
         $discoNuevo = new App\Disco;
@@ -46,7 +46,26 @@ class DiskController extends Controller
     
             //return back()->with('mensaje', 'Disco Agregado');
     }
-    
+
+        public function editar($id){
+            $disco = App\Disco::findOrFail($id);
+            return view('editar',compact('disco'));
+        }
+        
+        public function update(Request $request, $id){
+               $discoUpdate = App\Disco::findOrFail($id);
+               $discoUpdate->id = $request->id;
+               $discoUpdate->id_numero = $request->id_numero;
+               $discoUpdate->tarjetaLogica = $request->tarjetaLogica;
+               $discoUpdate->modelo = $request->modelo;
+               $discoUpdate->marca = $request->marca;
+               $discoUpdate->capacidad = $request->capacidad;
+               $discoUpdate->tipoEntrada = $request->tipoEntrada;
+               $discoUpdate->observaciones = $request->observaciones;
+               
+               $discoUpdate->save();
+               return redirect('showDisk');
+        }
 
         public function eliminar(Request $request, $id){
             
