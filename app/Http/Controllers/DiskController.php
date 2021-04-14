@@ -74,6 +74,7 @@ class DiskController extends Controller
          ->get();
          if(sizeof($discoL)>0){
              return view('resultado',compact('discoL'));
+
          }else{
              return redirect('https://www.google.com/search?q='.$busqueda.'&oq='.$busqueda.'&aqs=chrome..69i57.2100j0j15&sourceid=chrome&ie=UTF-8');
          }
@@ -115,20 +116,29 @@ class DiskController extends Controller
     }
 
     public function showDisk(){
-
-
         $discoL = DB::table('compatibles')
             ->select("discos.*"
             	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
             ->leftjoin("discos","discos.id","=","compatibles.id_logica")
             ->groupBy('compatibles.id_logica')
-            ->get();
-            
+            ->get();       
+        $dis = DB::table('discos')->get();
 
-            
-
-
-      return view('showDisk',compact('discoL'));
+      return view('showDisk',compact('dis'));
     }
-
+    public function filtrado(Request $request){
+        $request->validate([
+            'busqueda' => 'required'
+        ]);
+        $buscado = $request->input('busqueda'); 
+        
+        $dis = DB::table('discos')
+        ->select('discos.*')
+        ->where('tarjetaLogica',$buscado)
+        ->get();
+        
+          return view('showdisk', compact('dis'));
+       
+     
+    }
 }

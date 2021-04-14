@@ -32,3 +32,4 @@ Route::get('/', 'DiskController@terminaRegistro');
 
 Route::get('showDisk', 'DiskController@showDisk')->name('showDisk');
 Route::delete('eliminar/{id}', 'Diskcontroller@eliminar')->name('eliminar');
+Route::post('showDisk', 'DiskController@filtrado')->name('disco.filtrado');

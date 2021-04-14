@@ -5,8 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>TecnoVirtualDinamyc</title>
-
+        <title>VirtualTecnoDinamyc</title>
+        <link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
+        
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     
@@ -52,12 +53,11 @@
              </div>
              </div>
              </div>
-
      </nav>
 
      <header class="container-fluid" style="height: 500px; background-color: #fff ">
          <div class="row"> 
-           <div class="col-12 align-self-center text-center" >
+           <div class="col-12 align-self-center text-center mt-5" >
                <img src="{{asset('images/logo.jpg')}}" class= "img-fluid" width="400px " alt="">
                <br><br><br><br>
                 <h1>Bienvenidos a VIRTUAL TECNO DINAMYC</h1>

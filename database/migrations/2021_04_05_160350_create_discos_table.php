@@ -14,13 +14,13 @@ class CreateDiscosTable extends Migration
     public function up()
     {
         Schema::create('discos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('id_numero');
-            $table->string('tarjetaLogica');
+            $table->string('id');
+            $table->string('targetaLogica');
             $table->string('modelo');
             $table->string('marca');
             $table->string('capacidad');
             $table->string('tipoEntrada');
+            $table->string('compatibilidad');
             $table->text('observaciones')->nullable();
             $table->string('bandera')->default(0);
             $table->timestamps();
