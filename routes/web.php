@@ -29,3 +29,4 @@ Route::post('addCompatible', 'DiskController@add');
 Route::get('/', 'DiskController@terminaRegistro');
 
 Route::get('showDisk', 'DiskController@showDisk')->name('showDisk');
+Route::post('showDisk', 'DiskController@filtrado')->name('disco.filtrado');

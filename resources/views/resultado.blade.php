@@ -1,4 +1,7 @@
 @extends('plantilla')
+<head>
+<link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
+</head>
 <nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
     <div class="row">
         <div class="container-fluid">

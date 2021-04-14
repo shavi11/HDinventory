@@ -1,25 +1,13 @@
 @extends('plantilla')
+<head>
+<link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
+</head>
 
 <nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
     <div class="row">
         <div class="container-fluid">
             <h1 style="color:#fff">REGISTRO DE DISCO</h1>
 
-<<<<<<< HEAD
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>VirtualTecnoDinamyc</title>
-        
-    </head>
-
-    @if(session('mensaje'))
-        <div class="alert alert-danger">
-            {{session('mensaje')}}
-=======
->>>>>>> 86c803caee926a7dcf21421e6293001bf67a922c
         </div>
     </div>
     </div>

@@ -1,4 +1,7 @@
 @extends('plantilla')
+<head>
+<link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
+</head>
 <nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
     <div class="row">
         <div class="container-fluid">
@@ -8,6 +11,14 @@
     </div>
     </div>
 </nav>
+<div class="container">
+        <form action="{{ route('disco.filtrado') }}" method="POST" class="d-flex">
+        {{csrf_field()}}
+          <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="busqueda">
+          <button class="btn btn-outline-secundary" type="submit">Búsqueda</button>
+                        
+       </form>
+                  </div>
 @section('seccion')
 
 
