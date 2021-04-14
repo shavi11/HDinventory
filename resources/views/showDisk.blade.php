@@ -51,7 +51,7 @@
                         <th scope="col">Capacidad</th>
                         <th scope="col">Tipo de Entrada</th>
                         <th scope="col">Observaciones</th>
-                     
+                        <th scope="col">Acciones</th>        
                         @foreach($dis as $dis)
                     </tr>
                     <td>{{$dis->id_numero}}</td>
@@ -61,6 +61,13 @@
                     <td>{{$dis->capacidad}}</td>
                     <td>{{$dis->tipoEntrada}}</td>
                     <td>{{$dis->observaciones}}</td>
+                    <td>
+                <form action="{{url('eliminar',$dis->id)}}" method="POST">
+                {{csrf_field()}}
+                {{ method_field('delete') }}
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                </form>    
+           </td> 
                     
                     @endforeach
             </table>
