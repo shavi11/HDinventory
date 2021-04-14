@@ -2,10 +2,10 @@
 <head>
 <link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
 </head>
-<nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
+<nav class="navbar navbar-light" style="background-color: #FFCB00;" class="container">
     <div class="row">
         <div class="container-fluid">
-            <h1 style="color:#fff">LISTA DE DISCOS</h1>
+            <h1 style="color:#000">LISTA DE DISCOS</h1>
 
         </div>
     </div>
@@ -38,10 +38,10 @@
                 <a href="{{ url('/') }}" class="btn btn-secondary btn-lg btn-block">Volver</a>
     </nav>
     
-    <div class="container-fluid" style="background-color: #0D6EFD ">
+    <div class="container-fluid" style="background-color: #FFCB00 ">
         <div class="row">
 
-            <table class="table text-white">
+            <table class="table text-black">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -62,10 +62,9 @@
                     <td>{{$dis->tipoEntrada}}</td>
                     <td>{{$dis->observaciones}}</td>
                     <td>
-                        <a href="{{url('editar',$dis->id)}}" class="btn btn-warning">Editar</a>
-                    </td>
-                    <td> 
-                        <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post">
+                        <a href="{{url('editar',$dis->id)}}" class="btn btn-success">Editar</a>
+ 
+                        <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post" class="d-inline">
                         {{csrf_field()}}
                         {{ method_field('DELETE') }}
                         <button class="btn btn-danger" type="submit">Eliminar</button>

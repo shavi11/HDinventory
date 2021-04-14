@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call(DiscoSeeder::class);
-        $this->call(CompatibleSeeder::class);
+        $this->call(listaSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
