@@ -62,9 +62,9 @@
                     <td>{{$dis->tipoEntrada}}</td>
                     <td>{{$dis->observaciones}}</td>
                     <td>
-                <form action="{{url('eliminar',$dis->id)}}" method="POST">
+                <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post">
                 {{csrf_field()}}
-                {{ method_field('delete') }}
+                {{ method_field('DELETE') }}
                     <button class="btn btn-danger" type="submit">Eliminar</button>
                 </form>    
            </td> 

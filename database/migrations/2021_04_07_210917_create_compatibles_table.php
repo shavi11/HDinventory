@@ -21,7 +21,7 @@ class CreateCompatiblesTable extends Migration
             $table->foreign('id_logica')
             ->references('id')
             ->on('discos')
-            ->undelete('cascade');
+            ->onDelete('cascade');
         });
     }
 

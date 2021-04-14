@@ -48,17 +48,12 @@ class DiskController extends Controller
     }
     
 
-        public function eliminar($id){
-        
-            // $discoL = DB::table('compatibles')
-            // ->select("discos.*"
-            // 	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
-            // ->leftjoin("discos","discos.id","=","compatibles.id_logica")
-            // ->groupBy('compatibles.id_logica')
-            // ->get();
-            $discoEliminar = App\compatible::findOrFail($id);
-            $discoEliminar->delete();
-            return back();    
+        public function eliminar(Request $request, $id){
+            
+            $disco = DB::table('discos')->where('id', '=', $id)->delete();
+            
+
+        return back();  
         }
 
 
