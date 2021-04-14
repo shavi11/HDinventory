@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App;
 use App\Compatible;
+use App\Disco;
 
 class DiskController extends Controller
 {
@@ -109,8 +110,18 @@ class DiskController extends Controller
             ->groupBy('compatibles.id_logica')
             ->get();
             
-
+            //$jobs = Disco::with('id', 'id_numero', 'tarjetaLogica','modelo','marca','capacidad','tipoEntrada','observaciones')
+            //->where('discos.id', 'compatibles.id_logica')->doesntHave('compatibles')->get();
             
+            $repairJobs = Disco::with('id', 'id_numero', 'tarjetaLogica','modelo','marca','capacidad','tipoEntrada','observaciones')
+              
+              ->whereNotExists(function($query)
+                {
+                    $query->select(DB::raw('id_logica'))
+                          ->from('compatibles')
+                          ->whereRaw('discos.id = compatibles.id_logica');
+                })->get();
+            dd($repairJobs);
 
 
       return view('showDisk',compact('discoL'));
