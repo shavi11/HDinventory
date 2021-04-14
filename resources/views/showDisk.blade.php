@@ -43,6 +43,8 @@
                  <th scope="col">Tipo de Entrada</th>
                  <th scope="col">Observaciones</th>
                  <th scope="col">Disco Compatible</th>
+                 <th scope="col">Accion</th>
+                 
                    @foreach($discoL as $discoL)
               </tr> 
           <td>{{$discoL->id_numero}}</td>
@@ -53,7 +55,13 @@
           <td>{{$discoL->tipoEntrada}}</td>
           <td>{{$discoL->observaciones}}</td>
           <td>{{$discoL->tarjeta_logica}}</td>
-      
+           <td>
+                <form action="{{url('eliminar',$discoL->id)}}" method="POST">
+                {{csrf_field()}}
+                {{ method_field('delete') }}
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                </form>    
+           </td> 
       
         @endforeach
         </table>
