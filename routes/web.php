@@ -34,3 +34,5 @@ Route::get('showDisk', 'DiskController@showDisk')->name('showDisk');
 
 Route::post('showDisk', 'DiskController@filtrado')->name('disco.filtrado');
 Route::delete('showDisk/eliminar/{id}', 'Diskcontroller@eliminar');
+
+Route::get('showDisk/print', 'DiskController@imprimir');

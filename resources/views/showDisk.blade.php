@@ -11,14 +11,24 @@
     </div>
     </div>
 </nav>
-<div class="container">
-        <form action="{{ route('disco.filtrado') }}" method="POST" class="d-flex">
-        {{csrf_field()}}
-          <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="busqueda">
-          <button class="btn btn-outline-secundary" type="submit">Búsqueda</button>
-                        
-       </form>
-                  </div>
+
+        <div class="row">
+            <div class="col-4">  
+                   
+            </div> 
+            <div class="col-3 ">       
+             <form action="{{ route('disco.filtrado') }}" method="POST" class="d-flex">
+                    {{csrf_field()}}
+                    <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="busqueda">
+                    <button class="btn btn-outline-warning" type="submit">Búsqueda</button>        
+                </form> 
+            </div>
+            <div class="col-1">  
+                <a href="{{url('showDisk/print')}}"class="btn btn-outline-warning">PDF</a>
+            </div>
+            
+        </div>
+       
 @section('seccion')
 
 
@@ -38,10 +48,10 @@
                 <a href="{{ url('/') }}" class="btn btn-secondary btn-lg btn-block">Volver</a>
     </nav>
     
-    <div class="container-fluid" style="background-color: #0D6EFD ">
+    <div class="container-fluid" style="background-color: #FFCB00 ">
         <div class="row">
 
-            <table class="table text-white">
+            <table class="table text-black">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -52,8 +62,9 @@
                         <th scope="col">Tipo de Entrada</th>
                         <th scope="col">Observaciones</th>
                         <th scope="col">Acciones</th>        
-                        @foreach($dis as $dis)
+                       
                     </tr>
+                     @foreach($dis as $dis)
                     <td>{{$dis->id_numero}}</td>
                     <td>{{$dis->tarjetaLogica}}</td>
                     <td>{{$dis->modelo}}</td>
