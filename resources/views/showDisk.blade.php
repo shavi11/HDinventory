@@ -1,4 +1,7 @@
 @extends('plantilla')
+<head>
+<link rel="shortcut icon" href="./images/logoempresa.png" type="image/x-icon"/>
+</head>
 <nav class="navbar navbar-light" style="background-color: #FFCB00;" <div class="container">
     <div class="row">
         <div class="container-fluid">
@@ -8,6 +11,14 @@
     </div>
     </div>
 </nav>
+<div class="container">
+        <form action="{{ route('disco.filtrado') }}" method="POST" class="d-flex">
+        {{csrf_field()}}
+          <input class="form-control me-4" type="search" placeholder="Ingrese tarjeta logica" aria-label="Search" name="busqueda">
+          <button class="btn btn-outline-secundary" type="submit">Búsqueda</button>
+                        
+       </form>
+                  </div>
 @section('seccion')
 
 
@@ -40,23 +51,24 @@
                         <th scope="col">Capacidad</th>
                         <th scope="col">Tipo de Entrada</th>
                         <th scope="col">Observaciones</th>
-                        <th scope="col">Disco Compatible</th>
-                        @foreach($discoL as $discoL)
+                     
+                        @foreach($dis as $dis)
                     </tr>
-                    <td>{{$discoL->id_numero}}</td>
-                    <td>{{$discoL->tarjetaLogica}}</td>
-                    <td>{{$discoL->modelo}}</td>
-                    <td>{{$discoL->marca}}</td>
-                    <td>{{$discoL->capacidad}}</td>
-                    <td>{{$discoL->tipoEntrada}}</td>
-                    <td>{{$discoL->observaciones}}</td>
-                    <td>{{$discoL->tarjeta_logica}}</td>
-
-
+                    <td>{{$dis->id_numero}}</td>
+                    <td>{{$dis->tarjetaLogica}}</td>
+                    <td>{{$dis->modelo}}</td>
+                    <td>{{$dis->marca}}</td>
+                    <td>{{$dis->capacidad}}</td>
+                    <td>{{$dis->tipoEntrada}}</td>
+                    <td>{{$dis->observaciones}}</td>
+                    
                     @endforeach
             </table>
+           
         </div>
+        
     </div>
+    
 </body>
 <nav class="navbar navbar-expand-lg  bg-light">
                 <a href="{{ url('/') }}" class="btn btn-secondary btn-lg btn-block">Volver</a>
