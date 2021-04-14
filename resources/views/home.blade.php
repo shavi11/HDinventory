@@ -53,12 +53,11 @@
              </div>
              </div>
              </div>
-
      </nav>
 
      <header class="container-fluid" style="height: 500px; background-color: #fff ">
          <div class="row"> 
-           <div class="col-12 align-self-center text-center" >
+           <div class="col-12 align-self-center text-center mt-5" >
                <img src="{{asset('images/logo.jpg')}}" class= "img-fluid" width="400px " alt="">
                <br><br><br><br>
                 <h1>Bienvenidos a VIRTUAL TECNO DINAMYC</h1>
