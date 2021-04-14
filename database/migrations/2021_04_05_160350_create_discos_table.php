@@ -21,7 +21,6 @@ class CreateDiscosTable extends Migration
             $table->string('marca');
             $table->string('capacidad');
             $table->string('tipoEntrada');
-            $table->string('compatibilidad');
             $table->text('observaciones')->nullable();
             $table->string('bandera')->default(0);
             $table->timestamps();

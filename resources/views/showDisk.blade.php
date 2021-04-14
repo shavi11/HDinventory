@@ -64,12 +64,12 @@
                     <td>
                         <a href="{{url('editar',$dis->id)}}" class="btn btn-warning">Editar</a>
                     </td>
-                    <td>
-                            <form action="{{url('eliminar',$dis->id)}}" method="POST">
-                                {{csrf_field()}}
-                                {{ method_field('delete') }}
-                                <button class="btn btn-danger" type="submit">Eliminar</button>
-                            </form>    
+                    <td> 
+                        <form action="{{url('showDisk/eliminar/'.$dis->id)}}" method="post">
+                        {{csrf_field()}}
+                        {{ method_field('DELETE') }}
+                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                        </form>    
                     </td> 
                     
                     @endforeach

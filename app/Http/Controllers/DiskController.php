@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App;
 use App\Compatible;
+use App\Disco;
 
 class DiskController extends Controller
 {
@@ -66,17 +67,12 @@ class DiskController extends Controller
                return redirect('showDisk');
         }
 
-        public function eliminar($id){
-        
-            // $discoL = DB::table('compatibles')
-            // ->select("discos.*"
-            // 	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
-            // ->leftjoin("discos","discos.id","=","compatibles.id_logica")
-            // ->groupBy('compatibles.id_logica')
-            // ->get();
-            $discoEliminar = App\compatible::findOrFail($id);
-            $discoEliminar->delete();
-            return back();    
+        public function eliminar(Request $request, $id){
+            
+            $disco = DB::table('discos')->where('id', '=', $id)->delete();
+            
+
+        return back();  
         }
 
 
@@ -140,6 +136,7 @@ class DiskController extends Controller
             	,DB::raw("(GROUP_CONCAT(compatibles.tarjeta_logica SEPARATOR '-')) as `tarjeta_logica`"))
             ->leftjoin("discos","discos.id","=","compatibles.id_logica")
             ->groupBy('compatibles.id_logica')
+
             ->get();       
         $dis = DB::table('discos')->get();
 
