@@ -51,7 +51,7 @@
     <div class="container-fluid" style="background-color: #FFCB00 ">
         <div class="row">
 
-            <table class="table text-black">
+            <table class="table table-bordered text-black">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
