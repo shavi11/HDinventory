@@ -21,7 +21,7 @@ class DiskController extends Controller
     public function crear(Request $request){
 
         $request->validate([
-            'id' => 'required',
+            'id_numero' => 'required',
             'targetaLogica' => 'required',
             'modelo' => 'required',
             'marca' => 'required',
@@ -31,7 +31,7 @@ class DiskController extends Controller
         ]);
         
         $discoNuevo = new App\Disco;
-        $discoNuevo->id_numero = $request->id;
+        $discoNuevo->id_numero = $request->id_numero;
         $discoNuevo->tarjetaLogica = $request->targetaLogica;
         $discoNuevo->modelo = $request->modelo;
         $discoNuevo->marca = $request->marca;
