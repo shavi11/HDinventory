@@ -51,7 +51,7 @@
     <div class="container-fluid" style="background-color: #FFCB00 ">
         <div class="row">
 
-            <table class="table text-black">
+            <table class="table table-bordered text-black">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -65,6 +65,7 @@
                        
                     </tr>
                      @foreach($dis as $dis)
+                     <tr>
                     <td>{{$dis->id_numero}}</td>
                     <td>{{$dis->tarjetaLogica}}</td>
                     <td>{{$dis->modelo}}</td>
@@ -81,7 +82,7 @@
                         <button class="btn btn-danger" type="submit">Eliminar</button>
                         </form>    
                     </td> 
-                    
+                    </tr>
                     @endforeach
             </table>
            
