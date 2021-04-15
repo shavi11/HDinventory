@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App;
 use App\Compatible;
-use App\Disco;
+use \PDF;
 
 class DiskController extends Controller
 {
@@ -75,6 +75,16 @@ class DiskController extends Controller
         return back();  
         }
 
+        public function imprimir(){
+            $dis = DB::table('discos')
+            ->select('discos.*')
+            ->get();
+            
+            $pdf = \PDF::loadView('pdf',compact('dis'))->setOptions(['defaultFont' => 'sans-serif']); 
+        
+            return $pdf->download('invoice.pdf'); 
+            
+        }
 
      public function compatible(Request $request){
 

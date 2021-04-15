@@ -36,3 +36,4 @@ Route::put('/editar/{id}','DiskController@update')->name('update');
 
 Route::post('showDisk', 'DiskController@filtrado')->name('disco.filtrado');
 Route::delete('showDisk/eliminar/{id}', 'Diskcontroller@eliminar');
+Route::get('showDisk/print', 'DiskController@imprimir');
