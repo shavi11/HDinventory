@@ -21,6 +21,7 @@
             {{session('mensaje')}}
             <br>
             <div>
+               
                Referencia al siguiente <a href="https://www.google.com/">enlace</a>
             </div>
         </div>
