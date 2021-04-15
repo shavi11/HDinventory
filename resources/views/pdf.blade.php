@@ -5,7 +5,7 @@
         .titulo{
             text-align:center;
             font: 2rem;
-            color:blue;
+            
         }
     </style>
          <div class="titulo">
