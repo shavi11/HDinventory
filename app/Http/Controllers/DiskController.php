@@ -101,7 +101,29 @@ class DiskController extends Controller
              return view('resultado',compact('discoL'));
 
          }else{
-             return redirect('https://www.google.com/search?q='.$busqueda.'&oq='.$busqueda.'&aqs=chrome..69i57.2100j0j15&sourceid=chrome&ie=UTF-8');
+             $dis = DB::table('listas')
+             ->select('USB','SATA')
+            ->where('USB',  $busqueda)
+            ->distinct('SATA')
+            ->get();
+            $mensaje='Tarjeta Logica USB-SATA';
+             if (sizeof($dis)>0) {
+                 return view('lista',compact('dis','mensaje'));
+             }else{         
+                    $dis = DB::table('listas')
+                    ->select('USB','SATA')
+                    ->where('SATA',  $busqueda)
+                    ->distinct('USB')
+                    ->get();
+                    $mensaje='Tarjeta Logica SATA-USB';
+                    if (sizeof($dis)>0) {
+                        return view('lista',compact('dis','mensaje'));
+                    }else{
+                        return redirect('https://www.google.com/search?q='.$busqueda.'+to+sata');
+                    }
+             }
+            
+             
          }
                 
      }   
