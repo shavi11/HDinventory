@@ -49,9 +49,9 @@
     </nav>
     
     <div class="container-fluid" style="background-color: #FFCB00 ">
-        <div class="row">
+        <div>
 
-            <table class="table table-bordered text-black">
+            <table class="table table-bordered table-responsive text-black">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
