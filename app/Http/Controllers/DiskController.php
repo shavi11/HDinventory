@@ -64,8 +64,23 @@ class DiskController extends Controller
                $discoUpdate->observaciones = $request->observaciones;
                
                $discoUpdate->save();
-               return redirect('showDisk');
+
+               $new = $request->targetaLogica;
+
+               DB::table('discos')
+                ->where('id', $id)
+                ->update(['bandera' => 0]);
+
+                $dis = DB::table('compatibles')
+                ->select('*')
+                ->where('id_logica', $id)
+                ->get();
+
+
+               return view('editCompatible',compact('new','dis','id'));
         }
+        
+
 
         public function eliminar(Request $request, $id){
             
@@ -73,6 +88,23 @@ class DiskController extends Controller
             
 
         return back();  
+        }
+        
+        public function eliminarCompatible(Request $request, $id){
+            
+            $disco = DB::table('compatibles')->where('id', '=', $id)->delete();
+      
+        $id_dis = DB::table('discos')
+        ->select('id')
+        ->where('bandera','0')
+        ->first();
+
+            $dis = DB::table('compatibles')
+                ->select('*')
+                ->where('id_logica', $id_dis->id)
+                ->get();
+                
+                return view('editCompatible',compact('dis'));
         }
 
         public function imprimir(){
@@ -146,6 +178,29 @@ class DiskController extends Controller
         return redirect('addCompatible')->with('mensaje','Tajeta Logica Compatible Añadida');
     }
 
+    public function add2(Request $request){
+        
+        $discoL = DB::table('discos')
+         ->where('bandera', 0)
+         ->get();
+
+         foreach ($discoL as $discoL) {
+            $tl = $discoL->id;
+         }
+
+        $compatible = new Compatible();
+        $compatible->id_logica =  $tl;
+        $compatible->tarjeta_logica =  $request->compatible;
+        $compatible->save();
+
+        $dis = DB::table('compatibles')
+        ->select('*')
+        ->where('id_logica', $tl)
+        ->get();
+
+        return view('editCompatible',compact('dis'))->with('mensaje','Tajeta Logica Compatible Añadida');
+    }
+
     public function resultado(){
         return view('resultado');
     }
@@ -156,6 +211,15 @@ class DiskController extends Controller
             ->update(['bandera' => 1]);
             
         return view('home');
+    }
+    public function terminaRegistro2(){
+        DB::table('discos')
+            ->where('bandera', 0)
+            ->update(['bandera' => 1]);
+            
+            $dis = DB::table('discos')->get();
+
+            return view('showDisk',compact('dis'));
     }
 
     public function addCompatible(){

@@ -58,7 +58,7 @@
 
                                     <br>
                                     <button type="submit" class="btn btn-warning mb-5" value="editar"
-                                        class>editar</button>
+                                        class>Siguiente</button>
                                     <a href="{{ url('showDisk') }}" class="btn btn-primary mb-5">Volver</a>
                                 </div>
                             </div>

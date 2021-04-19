@@ -29,11 +29,14 @@ Route::post('addCompatible', 'DiskController@add');
 
 
 Route::get('/', 'DiskController@terminaRegistro');
+Route::get('showDisk', 'DiskController@terminaRegistro2');
 
 Route::get('showDisk', 'DiskController@showDisk')->name('showDisk');
 Route::get('editar/{id}','DiskController@editar')->name('editar');
 Route::put('/editar/{id}','DiskController@update')->name('update');
+Route::post('editCompatible','DiskController@add2')->name('editCompatible');;
 
 Route::post('showDisk', 'DiskController@filtrado')->name('disco.filtrado');
 Route::delete('showDisk/eliminar/{id}', 'Diskcontroller@eliminar');
+Route::delete('eliminarCompatible/{id}', 'Diskcontroller@eliminarCompatible');
 Route::get('showDisk/print', 'DiskController@imprimir');
