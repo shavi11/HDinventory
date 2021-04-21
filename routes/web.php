@@ -37,6 +37,6 @@ Route::put('/editar/{id}','DiskController@update')->name('update');
 Route::post('editCompatible','DiskController@add2')->name('editCompatible');;
 
 Route::post('showDisk', 'DiskController@filtrado')->name('disco.filtrado');
-Route::delete('showDisk/eliminar/{id}', 'Diskcontroller@eliminar');
-Route::delete('eliminarCompatible/{id}', 'Diskcontroller@eliminarCompatible');
+Route::delete('showDisk/eliminar/{id}', 'DiskController@eliminar');
+Route::delete('eliminarCompatible/{id}', 'DiskController@eliminarCompatible');
 Route::get('showDisk/print', 'DiskController@imprimir');
