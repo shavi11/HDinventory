@@ -20,7 +20,7 @@ class DiskController extends Controller
 
     public function crear(Request $request){
 
-        $request->validate([
+        $campos=[
             'id_numero' => 'required',
             'targetaLogica' => 'required',
             'modelo' => 'required',
@@ -28,16 +28,22 @@ class DiskController extends Controller
             'capacidad' => 'required',
             'tipoEntrada' => 'required',
             
-        ]);
+        ];
+        $mensaje=[
+            "required"=>'Campo requerido',
+        ];
+        $this->validate($request,$campos,$mensaje);
+
+
         
         $discoNuevo = new App\Disco;
-        $discoNuevo->id_numero = $request->id_numero;
-        $discoNuevo->tarjetaLogica = $request->targetaLogica;
-        $discoNuevo->modelo = $request->modelo;
-        $discoNuevo->marca = $request->marca;
-        $discoNuevo->capacidad = $request->capacidad;
-        $discoNuevo->tipoEntrada = $request->tipoEntrada;
-        $discoNuevo->observaciones = $request->observaciones;
+        $discoNuevo->id_numero = strtoupper( $request->id_numero);
+        $discoNuevo->tarjetaLogica = strtoupper($request->targetaLogica);
+        $discoNuevo->modelo = strtoupper($request->modelo);
+        $discoNuevo->marca = strtoupper($request->marca);
+        $discoNuevo->capacidad = strtoupper($request->capacidad);
+        $discoNuevo->tipoEntrada = strtoupper($request->tipoEntrada);
+        $discoNuevo->observaciones = strtoupper($request->observaciones);
 
         $discoNuevo->save();
 
@@ -55,13 +61,13 @@ class DiskController extends Controller
         public function update(Request $request, $id){
                $discoUpdate = App\Disco::findOrFail($id);
                $discoUpdate->id = $request->id;
-               $discoUpdate->id_numero = $request->id_numero;
-               $discoUpdate->tarjetaLogica = $request->tarjetaLogica;
-               $discoUpdate->modelo = $request->modelo;
-               $discoUpdate->marca = $request->marca;
-               $discoUpdate->capacidad = $request->capacidad;
-               $discoUpdate->tipoEntrada = $request->tipoEntrada;
-               $discoUpdate->observaciones = $request->observaciones;
+               $discoUpdate->id_numero = strtoupper($request->id_numero);
+               $discoUpdate->tarjetaLogica = strtoupper($request->tarjetaLogica);
+               $discoUpdate->modelo = strtoupper($request->modelo);
+               $discoUpdate->marca = strtoupper($request->marca);
+               $discoUpdate->capacidad = strtoupper($request->capacidad);
+               $discoUpdate->tipoEntrada = strtoupper($request->tipoEntrada);
+               $discoUpdate->observaciones = strtoupper($request->observaciones);
                
                $discoUpdate->save();
 
@@ -123,11 +129,11 @@ class DiskController extends Controller
         $request->validate([
             'logico' => 'required'
         ]);
-         $busqueda = $request->input('logico');   
+         $busqueda = strtoupper($request->input('logico'));   
          //https://www.google.com/search?q=701499&oq=701499&aqs=chrome..69i57.2100j0j15&sourceid=chrome&ie=UTF-8       
          $discoL = DB::table('compatibles')
          ->join('discos','discos.id','=','compatibles.id_logica')
-         ->where('tarjeta_logica',  $request->logico)
+         ->where('tarjeta_logica',  strtoupper($request->logico))
          ->get();
          if(sizeof($discoL)>0){
              return view('resultado',compact('discoL'));
@@ -172,7 +178,7 @@ class DiskController extends Controller
 
         $compatible = new Compatible();
         $compatible->id_logica =  $tl;
-        $compatible->tarjeta_logica =  $request->compatible;
+        $compatible->tarjeta_logica =  strtoupper($request->compatible);
         $compatible->save();
 
         return redirect('addCompatible')->with('mensaje','Tajeta Logica Compatible Añadida');
@@ -190,7 +196,7 @@ class DiskController extends Controller
 
         $compatible = new Compatible();
         $compatible->id_logica =  $tl;
-        $compatible->tarjeta_logica =  $request->compatible;
+        $compatible->tarjeta_logica = strtoupper( $request->compatible);
         $compatible->save();
 
         $dis = DB::table('compatibles')
@@ -242,14 +248,14 @@ class DiskController extends Controller
         $request->validate([
             'busqueda' => 'required'
         ]);
-        $buscado = $request->input('busqueda'); 
+        $buscado = strtoupper($request->input('busqueda')); 
         
         $dis = DB::table('discos')
         ->select('discos.*')
         ->where('tarjetaLogica',$buscado)
         ->get();
         
-          return view('showdisk', compact('dis'));
+          return view('showDisk', compact('dis'));
        
      
     }

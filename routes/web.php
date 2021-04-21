@@ -23,7 +23,7 @@ Route::post('resultado', 'DiskController@compatible')->name('disco.compatible');
 
 
 
-Route::get('addCompatible', 'Diskcontroller@addCompatible')->name('addCompatible'); 
+Route::get('addCompatible', 'DiskController@addCompatible')->name('addCompatible'); 
 Route::post('addCompatible', 'DiskController@add');
 
 
