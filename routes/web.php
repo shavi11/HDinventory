@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', 'UsuariosController@index')->name('login');
 Route::get('/', 'DiskController@inicio')->name('home');
 
+Route::post('/', 'UsuariosController@ingresar')->name('ingresar');
 
 Route::get('registro', 'DiskController@registro');
 Route::post('/', 'DiskController@crear')->name('disco.crear');
