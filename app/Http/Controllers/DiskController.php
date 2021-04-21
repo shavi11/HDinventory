@@ -113,16 +113,16 @@ class DiskController extends Controller
                 return view('editCompatible',compact('dis'));
         }
 
-        public function imprimir(){
-            $dis = DB::table('discos')
-            ->select('discos.*')
-            ->get();
-            
-            $pdf = \PDF::loadView('pdf',compact('dis'))->setOptions(['defaultFont' => 'sans-serif']); 
+          public function imprimir(){
+              $dis = DB::table('discos')
+              ->select('discos.*')
+              ->get();
+              $datos = compact('dis');  
+              $pdf = PDF::loadView('pdf', $datos);
         
-            return $pdf->download('invoice.pdf'); 
+              return $pdf->download('inventario'.'.pdf'); 
             
-        }
+        } 
 
      public function compatible(Request $request){
 

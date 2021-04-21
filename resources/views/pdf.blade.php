@@ -17,17 +17,17 @@
     <div class="container">
         <div class="box-body">
         <style>
-            table, th, td{
+            /* table, th, td{
                 border: 1px solid black;
                 border-collapse: collapse;
             }
 
             th, td{
                 padding: 15px;
-            }
+            } */
         </style>
 
-            <table style="width: 100%">
+            <table class="table table-bordered table-responsive" style="width: 100%">
                 
                 <thead>
                     <tr >
